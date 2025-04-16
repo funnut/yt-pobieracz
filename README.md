@@ -1,8 +1,8 @@
 # yt-pobieracz
 
-*Zainspirowany przez [@Khansaad1275](https://github.com/Khansaad1275) stworzony przez [@funnut](https://github.com/funnut)*
+*Zainspirowany przez [@Khansaad1275](https://github.com/Khansaad1275) stworzony przez [@funnut](https://github.com/funnut).*
 
-Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu
+Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu.
 
 ## Instalacja
 
