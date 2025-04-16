@@ -1,6 +1,6 @@
 # yt-pobieracz
 
-Zainspirowany przez Khansaad1275 stworzony przez @funnut
+*Zainspirowany przez Khansaad1275 stworzony przez @funnut*
 
 Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu
 
@@ -12,4 +12,4 @@ apt update && apt upgrade && cd && pkg install git -y && git clone https://githu
 
 ## Jak używać
 
-Kliknij w 'Udostępnij' za pomocą **Termux** lub uruchom: 'bash ~/bin/termux-url-opener "www.linkdowideo.pl"'
+Kliknij w ***Udostępnij*** za pomocą ***Termux*** lub uruchom: 'bash ~/bin/termux-url-opener "www.linkdowideo.pl"'
