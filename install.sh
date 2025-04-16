@@ -1,74 +1,85 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Project name : yt-pobieracz
-# Coded by: Khansaad1275
-# Github: https://github.com/khansaad1275/Termux-YTD
+# Inspired by Khansaad1275 made by funnut
+# https://github.com/funnut/yt-pobieracz
 
 TERMUX_HOME="/data/data/com.termux/files/home"
+OUTPUT_PATH="${TERMUX_HOME}/storage/downloads/yt-pobieracz"
 
-# Make sure we are up to date.
-printf "Retrieving package lists and updating\n"
+# Aktualizacja pakietów.
+echo "Pobieranie listy pakietów i ich aktualizacja..."
 apt-get update && apt-get upgrade -y
+if [ $? -ne 0 ]; then
+  echo "Błąd podczas aktualizacji pakietów. Przerwano."
+  exit 1
+fi
 
-# If the storage directory does not exist, run termux-setup-storage.
+# Jeżeli folder storage/ nie istnieje - uruchom termux-setup-storage.
 if [ ! -d "${TERMUX_HOME}/storage" ]; then
-  printf "${YELLOW}Requesting access to storage${RESET}\n"
+  echo "Zgoda na dostęp do storage..."
   sleep 2
   termux-setup-storage
+  if [ $? -ne 0 ]; then
+    echo "Błąd przy ustawianiu dostępu do storage."
+    exit 1
+  fi
 fi
 
-# Install python if it is not already.
+# Instalacja języka Python, jeżeli nie jest zainstalowany.
 if ! apt-cache pkgnames | grep "^python$" &>/dev/null; then
-  printf "${CYAN}Installing python${RESET}\n"
+  echo "Instalowanie Python..."
   sleep 2
   apt-get install python -y
+  if [ $? -ne 0 ]; then
+    echo "Błąd podczas instalacji Python."
+    exit 1
+  fi
 fi
 
-# Install the yt-dlp python module if it isn't installed.
+# Instalacja termux-api, jeżeli nie jest zainstalowane.
+if ! command -v termux-battery-status &> /dev/null; then
+  echo "Instalowanie Termux API..."
+  pkg install -y termux-api
+  if [ $? -ne 0 ]; then
+    echo "Błąd podczas instalacji Termux API."
+    exit 1
+  fi
+fi
+
+# Instalowanie yt-dlp, jeżeli nie jest zainstalowane.
 if ! pip list | grep "^yt-dlp" &>/dev/null; then
-  printf "${CYAN}Installing yt-dlp${RESET}\n"
+  echo "Instalowanie yt-dlp..."
   sleep 2
   pip install yt-dlp
+  if [ $? -ne 0 ]; then
+    echo "Błąd podczas instalacji yt-dlp."
+    exit 1
+  fi
 fi
 
-# Create the output directory if needed.
-OUTPUT_PATH="${TERMUX_HOME}/storage/shared/Youtube"
+# Tworzenie folderu dla pobieranych plików.
 if [ ! -d "${OUTPUT_PATH}" ]; then
-  printf "${CYAN}Creating output directory at \"${OUTPUT_PATH}\"${RESET}\n"
+  echo "Tworzenie folderu \"${OUTPUT_PATH}\"..."
   sleep 2
-  mkdir "${OUTPUT_PATH}"
+  mkdir -p "${OUTPUT_PATH}"
+  if [ $? -ne 0 ]; then
+    echo "Błąd podczas tworzenia folderu."
+    exit 1
+  fi
 fi
 
-
-# Install the url opener.
-printf "${BLUE}Installing Termux-YTD${RESET}\n"
+# Instalacja yt-pobieracz.
+echo "Instalowanie yt-pobieracz..."
 sleep 2
 mkdir -p "${TERMUX_HOME}/bin"
 cp -f termux-url-opener "${TERMUX_HOME}/bin/termux-url-opener"
 chmod +x "${TERMUX_HOME}/bin/termux-url-opener"
-
-# Install the termux API and inform the user about system gallery settings.
-printf "${RED_B}WARNING!!! ${RESET}\n${YELLOW}By default, the videos you download won't appear in your system gallery, and therefore you won't be able to use them.\n"
-printf "If you wish to see the video appear in your gallery, you'll have to install the ${MAGENTA}Termux:API app${RESET} via ${MAGENTA_B}${TERMUX_APK_RELEASE}${RESET}\n"
-
-read -rp "Do you want to install the termux-api package? (yes/y/no/n) " RES
-
-USER_ANS=$(echo "${RES^}" | cut -c 1-1 )
-
-if [ $USER_ANS = "Y" ]; then
-    printf "\n${CYAN}Installing termux-api package${RESET}\n"
-    sleep 2
-    pkg install termux-api
-    if [ $? -eq 0 ]; then
-  	  printf "${GREEN_B}termux-api package successfully installed${RESET}\n"
-  	  printf "${YELLOW}Termux app was installed via ${MAGENTA_B}${TERMUX_APK_RELEASE}${RESET}\n"
-      printf "${YELLOW}You will need to install the Termux:API app through that way too${RESET}\n"
-	  else
-  	  printf "${RED_B}An error occurred during termux-api installation${RESET}\n"
-	  fi
-    sleep 2
+if [ $? -ne 0 ]; then
+  echo "Błąd podczas instalacji yt-pobieracz."
+  exit 1
 fi
 
-printf "\nInstallation Complete!\n"
-printf "Just open the video you want to download in YouTube, click share, select Termux\n"
-printf "For More Awesome and Useful Tools like this, Visit My website ©www.LearnTermux.tech\n"
+echo -e "\nInstalacja zakończona.\n"
+echo -e "Kliknij w Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener \"www.linkdowideo.pl\"\n"
+echo -e "UWAGA: Pobrane pliki mogą nie być widoczne w galerii.\n"
+echo -e "Jeżeli chcesz by były one widoczne - pobierz aplikację Termux:API."
