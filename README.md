@@ -14,4 +14,6 @@ apt update && apt upgrade && cd && pkg install git -y && git clone https://githu
 
 ***Udostępnij*** wideo lub muzykę za pomocą aplikacji ***Termux*** następnie wybierz format. 
 
+![Zrzut ekranu](screenshot.jpg)
+
 Możesz też uruchomić ten sam skrypt podając odnośnik do wideo: 'bash ~/bin/termux-url-opener "www.linkdowideo.pl"'
