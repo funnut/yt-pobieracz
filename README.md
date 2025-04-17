@@ -4,8 +4,6 @@
 
 Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu.
 
-> Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
-
 ![Zrzut ekranu](screenshot.jpg)
 
 ## Instalacja
@@ -21,3 +19,4 @@ Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telef
 
 > Możesz też uruchomić ten sam skrypt podając odnośnik do wideo: bash ~/bin/termux-url-opener "[www.linkdowideo.pl](https://youtu.be/dQw4w9WgXcQ?si=omyOhjUGba6-BSCx)”
  
+Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
