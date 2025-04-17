@@ -13,7 +13,7 @@ Działa z wieloma stronami takimi jak *YouTube*, *TikTok*, *PolsatGO*, *Player.p
 + Pobierz i zainstaluj aplikację Termux 
 + Uruchom polecenie:
 `apt update && apt upgrade -y && cd && pkg install git -y && git clone https://github.com/funnut/yt-pobieracz.git && cd yt-pobieracz && bash install.sh`
-+ Jeśli podoba Ci się ten projekt, zostaw [gwiazdkę na GitHubie](https://github.com/funnut/yt-pobieracz) 🍻
++ Jeśli spodoba Ci się projekt, zostaw [gwiazdkę na GitHubie](https://github.com/funnut/yt-pobieracz) 🍻
 
 ## Jak używać
 
