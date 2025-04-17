@@ -11,8 +11,6 @@ Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telef
 `apt update && apt upgrade -y && cd && pkg install git -y && git clone https://github.com/funnut/yt-pobieracz.git && cd yt-pobieracz && bash install.sh`
 + Jeśli podoba Ci się ten projekt, zostaw [gwiazdkę na GitHubie](https://github.com/funnut/yt-pobieracz).
 
-[![Star](https://img.shields.io/github/stars/funnut/yt-pobieracz?style=social)](https://github.com/funnut/yt-pobieracz)
-
 ## Jak używać
 
 ***Udostępnij*** wideo lub muzykę za pomocą aplikacji ***Termux*** następnie wybierz format. 
