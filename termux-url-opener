@@ -10,8 +10,7 @@ cat << "EOF"
    ___ ___   __| | ___
   / __/ _ \ / _` |/ _ \
  | (_| (_) | (_| |  __/
-(_)___\___/ \__,_|\___|
-
+(_)___\___/ \__,_|\___| yt-pobieracz
 EOF
 
 mkdir -p "/data/data/com.termux/files/home/storage/downloads/yt-pobieracz"
