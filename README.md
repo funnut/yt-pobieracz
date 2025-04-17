@@ -15,8 +15,8 @@ Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telef
 
 ## Jak używać
 
-***Udostępnij*** wideo lub muzykę poprzez aplikacje ***Termux***, po uruchomieniu skryptu wybierz format. 
+**Udostępnij** wideo lub muzykę poprzez aplikacje **Termux**, po uruchomieniu skryptu wybierz format. 
 
 > Możesz też uruchomić ten sam skrypt podając odnośnik do wideo ręcznie: bash ~/bin/termux-url-opener "[www.linkdowideo.pl](https://youtu.be/dQw4w9WgXcQ?si=omyOhjUGba6-BSCx)”
  
-Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
+*Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).*
