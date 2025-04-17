@@ -4,7 +4,7 @@
 
 Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu.
 
-Działa z wieloma stronami takimi jak YouTube, TikTok, PolsatGO, Player.pl i dziesiątki innych...
+Działa z wieloma stronami takimi jak *YouTube*, *TikTok*, *PolsatGO*, *Player.pl* i dziesiątki innych...
 
 ![Zrzut ekranu](screenshot.jpg)
 
