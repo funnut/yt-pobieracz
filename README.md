@@ -4,6 +4,8 @@
 
 Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telefonu.
 
+![Zrzut ekranu](screenshot.jpg)
+
 ## Instalacja
 
 + Pobierz i zainstaluj aplikację Termux 
@@ -14,8 +16,6 @@ Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telef
 ## Jak używać
 
 ***Udostępnij*** wideo lub muzykę za pomocą aplikacji ***Termux*** następnie wybierz format. 
-
-![Zrzut ekranu](screenshot.jpg)
 
 Możesz też uruchomić ten sam skrypt podając odnośnik do wideo: `bash ~/bin/termux-url-opener "www.linkdowideo.pl"`
  
