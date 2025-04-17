@@ -6,6 +6,8 @@ Nakładka programu yt-dlp do pobierania muzyki i filmów z sieci z twojego telef
 
 Działa z wieloma stronami takimi jak *YouTube*, *TikTok*, *PolsatGO*, *Player.pl* i dziesiątki innych...
 
+> Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
+
 ![Zrzut ekranu](screenshot.jpg)
 
 ## Instalacja
