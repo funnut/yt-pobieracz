@@ -80,6 +80,6 @@ if [ $? -ne 0 ]; then
 fi
 
 echo -e "\nInstalacja zakończona.\n"
-echo -e "Kliknij w Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener \"www.linkdowideo.pl\"\n"
+echo -e "Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener \"www.linkdowideo.pl\"\n"
 echo -e "UWAGA: Pobrane pliki mogą nie być widoczne w galerii.\n"
 echo -e "Jeżeli chcesz by były one widoczne - pobierz aplikację Termux:API."
