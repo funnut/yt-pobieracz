@@ -21,5 +21,5 @@ Działa z wieloma stronami takimi jak *YouTube*, *TikTok*, *PolsatGO*, *Player.p
 
 ***Udostępnij*** wideo lub muzykę za pomocą aplikacji ***Termux*** następnie wybierz format. 
 
-Możesz też uruchomić ten sam skrypt podając odnośnik do wideo: bash ~/bin/termux-url-opener "[www.linkdowideo.pl](https://youtu.be/dQw4w9WgXcQ?si=omyOhjUGba6-BSCx)”
+> Możesz też uruchomić ten sam skrypt podając odnośnik do wideo: bash ~/bin/termux-url-opener "[www.linkdowideo.pl](https://youtu.be/dQw4w9WgXcQ?si=omyOhjUGba6-BSCx)”
  
