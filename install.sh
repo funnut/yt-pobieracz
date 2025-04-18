@@ -72,7 +72,7 @@ fi
 echo "Instalowanie yt-pobieracz..."
 sleep 2
 mkdir -p "${TERMUX_HOME}/bin"
-cp -f termux-url-opener "${TERMUX_HOME}/bin/termux-url-opener"
+cp -f yt-pobieracz "${TERMUX_HOME}/bin/termux-url-opener"
 chmod +x "${TERMUX_HOME}/bin/termux-url-opener"
 if [ $? -ne 0 ]; then
   echo "Błąd podczas instalacji yt-pobieracz."
