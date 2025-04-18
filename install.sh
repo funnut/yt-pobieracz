@@ -1,7 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Inspired by Khansaad1275 made by funnut
+# Zainspirowany przez Khansaad1275 stworzony przez funnut
 # https://github.com/funnut/yt-pobieracz
+# Jeżeli podoba Ci się projekt, zostaw gwiazdkę na GitHubie
+
+# Udostępnij wideo lub muzykę poprzez aplikacje Termux, po uruchomieniu skryptu wybierz format.
+# Możesz też uruchomić ten sam skrypt podając odnośnik do wideo ręcznie: bash ~/bin/termux-url-opener "www.linkdowideo.pl”
+
+# Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
 
 TERMUX_HOME="/data/data/com.termux/files/home"
 OUTPUT_PATH="${TERMUX_HOME}/storage/downloads/yt-pobieracz"
