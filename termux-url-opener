@@ -1,9 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Inspired by Khansaad1275 made by funnut
+# Zainspirowany przez Khansaad1275 stworzony przez funnut
 # https://github.com/funnut/yt-pobieracz
+# Jeżeli podoba Ci się projekt, zostaw gwiazdkę na GitHubie
 
-# Kliknij w Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener "www.linkdowideo.pl"
+# Udostępnij wideo lub muzykę poprzez aplikacje Termux, po uruchomieniu skryptu wybierz format.
+# Możesz też uruchomić ten sam skrypt podając odnośnik do wideo ręcznie: bash ~/bin/termux-url-opener "www.linkdowideo.pl”
+
+# Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
 
 cat << "EOF"
                 _
