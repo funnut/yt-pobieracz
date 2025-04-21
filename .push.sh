@@ -6,6 +6,7 @@ else
   msg="$1"
 fi
 
+git status
 git add .
 git commit -m "$msg"
 git push
