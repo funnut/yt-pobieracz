@@ -63,6 +63,17 @@ if ! pip list | grep "^yt-dlp" &>/dev/null; then
   fi
 fi
 
+# Instalowanie ffmpeg, jeżeli nie jest zainstalowane.
+if ! command -v ffmpeg &>/dev/null; then
+  echo "Instalowanie ffmpeg..."
+  sleep 2
+  pip install ffmpeg
+  if [ $? -ne 0 ]; then
+    echo "Błąd podczas instalacji ffmpeg."
+    exit 1
+  fi
+fi
+
 # Tworzenie folderu dla pobieranych plików.
 if [ ! -d "${OUTPUT_PATH}" ]; then
   echo "Tworzenie folderu \"${OUTPUT_PATH}\"..."
