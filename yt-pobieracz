@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/bash
 
 # Zainspirowany przez Khansaad1275 stworzony przez funnut
 # https://github.com/funnut/yt-pobieracz
@@ -17,8 +17,9 @@ cat << "EOF"
 (_)___\___/ \__,_|\___| yt-pobieracz
 EOF
 
-mkdir -p "/data/data/com.termux/files/home/storage/downloads/yt-pobieracz"
-fpath="/data/data/com.termux/files/home/storage/downloads/yt-pobieracz/%(title)s.%(ext)s"
+path="/data/data/com.termux/files/home/storage/downloads/yt-pobieracz"
+mkdir -p "$path"
+fpath="$path/%(title)s.%(ext)s"
 
 if [[ -z "$1" ]]; then
     echo "Użycie: termux-url-opener <URL>"
@@ -26,7 +27,7 @@ if [[ -z "$1" ]]; then
 fi
 
 if [[ "$1" == *"shorts"* ]]; then
-  yt-dlp -o "$fpath" "$1"
+  yt-dlp --merge-output-format mp4 -o "$path/[shorts] %(title)s.%(ext)s" "$1"
   exit
 else
 	echo " "
@@ -50,23 +51,23 @@ case $choice in
 
     ;;
 	2)
-	yt-dlp -f "bestvideo[height<=360]+bestaudio/best[height<=360]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=360]+bestaudio/best[height<=360]" --merge-output-format mp4 -o "$fpath" "$1"
 	;;
 
 	3)
-	yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=480]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=480]" --merge-output-format mp4 -o "$fpath" "$1"
 	;;
 
 	4)
-	yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" --merge-output-format mp4 -o "$fpath" "$1"
 	;;
 
 	5)
-	yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --merge-output-format mp4 -o "$fpath" "$1"
 	;;
 
 	6)
-	yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" --merge-output-format mp4 -o "$fpath" "$1"
 	;;
 
 	7)
@@ -74,8 +75,14 @@ case $choice in
 	;;
 
 	*)
-	yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$fpath" "$1"
+	yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" --merge-output-format mp4 -o "$fpath" "$1"
 esac
 
 echo
 read -p "Naciśnij Enter, aby zakończyć..."
+
+
+#   _
+# _|_  ._ ._   _|_
+#  ||_|| || ||_||_
+#       www.github.com/funnut
