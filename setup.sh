@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/bash
 
 # Zainspirowany przez Khansaad1275 stworzony przez funnut
 # https://github.com/funnut/yt-pobieracz
@@ -100,3 +100,4 @@ echo -e "\nInstalacja zakończona.\n"
 echo -e "Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener \"www.linkdowideo.pl\"\n"
 echo -e "UWAGA: Pobrane pliki mogą nie być widoczne w galerii.\n"
 echo -e "Jeżeli chcesz by były one widoczne - pobierz aplikację Termux:API."
+
