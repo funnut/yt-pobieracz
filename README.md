@@ -4,7 +4,7 @@
 
 Nakładka programu `yt-dlp` do pobierania muzyki i filmów z sieci z twojego telefonu.
 
-Pozwala szybko uruchomić pobieranie za pomocą przycisku SHARE w ulubionych formatach 'yt-dlp'.
+Pozwala szybko uruchomić pobieranie za pomocą przycisku SHARE w ulubionych formatach yt-dlp.
 
 ## Instalacja
 
