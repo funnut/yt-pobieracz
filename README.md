@@ -4,8 +4,6 @@
 
 Nakładka programu `yt-dlp` do pobierania muzyki i filmów z sieci z twojego telefonu.
 
-![Zrzut ekranu](screenshot.jpg)
-
 ## Instalacja
 
 + Pobierz i zainstaluj aplikację Termux 
