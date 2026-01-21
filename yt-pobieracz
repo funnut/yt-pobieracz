@@ -4,6 +4,7 @@
 # https://github.com/funnut/yt-pobieracz
 # Jeżeli podoba Ci się projekt, zostaw gwiazdkę na GitHubie!
 # Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
+#
 #   _
 # _|_  ._ ._   _|_
 #  ||_|| || ||_||_
@@ -11,7 +12,7 @@
 
 show_usage () {
   echo "Nakładka programu yt-dlp do wygodnego pobierania multimediów z sieci."
-  echo -e "\tUżycie: $(basename $0) <URL>"
+  echo "  Użycie:   $(basename $0) <URL>"
 }
 
 cat << "EOF"
@@ -26,57 +27,43 @@ EOF
 FPATH="/data/data/com.termux/files/home/storage/downloads/yt-pobieracz/%(title)s.%(ext)s"
 LOGFILE="/data/data/com.termux/files/home/bin/yt.log"
 
+[[ $# -lt 1 || $# -gt 1 ]] && show_usage && exit 1
+
 case "$1" in
-  "help" | "" )
+  "help" )
   show_usage
-  exit 0
-  ;;
+  exit ;;
   *"playlist"* )
-  FPATH="/data/data/com.termux/files/home/storage/downloads/yt-pobieracz/playlist/%(title)s.%(ext)s"
-  ;;
+  FPATH="/data/data/com.termux/files/home/storage/downloads/yt-pobieracz/playlist/%(title)s.%(ext)s" ;;
   *"shorts"* )
   yt-dlp --merge-output-format mp4 -o "/data/data/com.termux/files/home/storage/downloads/yt-pobieracz/[shorts] %(title)s.%(ext)s" "$1"
-  exit 0
+  exit
 esac
 
-echo -e "   1. Music Mp3♫"
-echo -e "   2. Wideo 360p"
-echo -e "   3. Wideo 480p"
-echo -e "   4. Wideo 720p"
-echo -e "   5. Wideo 1080p"
-echo -e "   6. Wideo 2160p"
-echo -e "   7. Anuluj"
+echo "   1. Music Mp3♫"
+echo "   2. Wideo 360p"
+echo "   3. Wideo 480p"
+echo "   4. Wideo 720p"
+echo "   5. Wideo 1080p"
+echo "   6. Wideo 2160p"
+echo "   7. Anuluj"
 echo
 read -p "Wybierz format: " choice
 echo
 
-echo -e "$(date '+%m-%d %H:%M') [$choice] $1" >> $LOGFILE
+echo "$(date '+%m-%d %H:%M') [$choice] "$1"" >> $LOGFILE
 
 case $choice in
-  1)
-  yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "$FPATH" "$1"
-  ;;
-  2)
-  yt-dlp -f "bestvideo[height<=360]+bestaudio/best[height<=360]" -o "$FPATH" "$1"
-  ;;
-  3)
-  yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=480]" -o "$FPATH" "$1"
-  ;;
-  4)
-  yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "$FPATH" "$1"
-  ;;
-  5)
-  yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" -o "$FPATH" "$1"
-  ;;
-  6)
-  yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$FPATH" "$1"
-  ;;
-  7)
-  exit 0
-  ;;
-  *)
-  yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$FPATH" "$1"
+  1) yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o "$FPATH" "$1" ;;
+  2) yt-dlp -f "bestvideo[height<=360]+bestaudio/best[height<=360]" -o "$FPATH" "$1" ;;
+  3) yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=480]" -o "$FPATH" "$1" ;;
+  4) yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]" -o "$FPATH" "$1" ;;
+  5) yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" -o "$FPATH" "$1" ;;
+  6) yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$FPATH" "$1" ;;
+  7) exit ;;
+  *) yt-dlp -f "bestvideo[height<=2160]+bestaudio/best[height<=2160]" -o "$FPATH" "$1"
 esac
+
 echo
 read -p "Naciśnij Enter, aby zakończyć..."
-exit 0
+exit

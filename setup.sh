@@ -1,18 +1,19 @@
-#!/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Zainspirowany przez Khansaad1275 stworzony przez funnut
 # https://github.com/funnut/yt-pobieracz
 # Jeżeli podoba Ci się projekt, zostaw gwiazdkę na GitHubie
-
-# Udostępnij wideo lub muzykę poprzez aplikacje Termux, po uruchomieniu skryptu wybierz format.
-# Możesz też uruchomić ten sam skrypt podając odnośnik do wideo ręcznie: bash ~/bin/termux-url-opener "www.linkdowideo.pl”
-
 # Kod dostępny na zasadach licencji MIT (zobacz plik LICENSE).
+#
+#   _
+# _|_  ._ ._   _|_
+#  ||_|| || ||_||_
+#       www.github.com/funnut
 
 TERMUX_HOME="/data/data/com.termux/files/home"
 OUTPUT_PATH="${TERMUX_HOME}/storage/downloads/yt-pobieracz"
 
-# Aktualizacja pakietów.
+# Aktualizacja pakietów
 echo "Pobieranie listy pakietów i ich aktualizacja..."
 apt-get update && apt-get upgrade -y
 if [ $? -ne 0 ]; then
@@ -20,7 +21,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Jeżeli folder storage/ nie istnieje - uruchom termux-setup-storage.
+# Jeżeli folder storage/ nie istnieje - uruchom termux-setup-storage
 if [ ! -d "${TERMUX_HOME}/storage" ]; then
   echo "Zgoda na dostęp do storage..."
   sleep 2
@@ -31,7 +32,7 @@ if [ ! -d "${TERMUX_HOME}/storage" ]; then
   fi
 fi
 
-# Instalacja języka Python, jeżeli nie jest zainstalowany.
+# Instalacja języka Python, jeżeli nie jest zainstalowany
 if ! apt-cache pkgnames | grep "^python$" &>/dev/null; then
   echo "Instalowanie Python..."
   sleep 2
@@ -42,7 +43,7 @@ if ! apt-cache pkgnames | grep "^python$" &>/dev/null; then
   fi
 fi
 
-# Instalacja termux-api, jeżeli nie jest zainstalowane.
+# Instalacja termux-api, jeżeli nie jest zainstalowane
 if ! command -v termux-battery-status &> /dev/null; then
   echo "Instalowanie Termux API..."
   pkg install -y termux-api
@@ -52,7 +53,7 @@ if ! command -v termux-battery-status &> /dev/null; then
   fi
 fi
 
-# Instalowanie yt-dlp, jeżeli nie jest zainstalowane.
+# Instalowanie yt-dlp, jeżeli nie jest zainstalowane
 if ! pip list | grep "^yt-dlp" &>/dev/null; then
   echo "Instalowanie yt-dlp..."
   sleep 2
@@ -63,7 +64,7 @@ if ! pip list | grep "^yt-dlp" &>/dev/null; then
   fi
 fi
 
-# Instalowanie ffmpeg, jeżeli nie jest zainstalowane.
+# Instalowanie ffmpeg, jeżeli nie jest zainstalowane
 if ! command -v ffmpeg &>/dev/null; then
   echo "Instalowanie ffmpeg..."
   sleep 2
@@ -74,7 +75,7 @@ if ! command -v ffmpeg &>/dev/null; then
   fi
 fi
 
-# Tworzenie folderu dla pobieranych plików.
+# Tworzenie folderu dla pobieranych plików
 if [ ! -d "${OUTPUT_PATH}" ]; then
   echo "Tworzenie folderu \"${OUTPUT_PATH}\"..."
   sleep 2
@@ -85,7 +86,7 @@ if [ ! -d "${OUTPUT_PATH}" ]; then
   fi
 fi
 
-# Instalacja yt-pobieracz.
+# Instalacja yt-pobieracz
 echo "Instalowanie yt-pobieracz..."
 sleep 2
 mkdir -p "${TERMUX_HOME}/bin"
@@ -100,4 +101,3 @@ echo -e "\nInstalacja zakończona.\n"
 echo -e "Udostępnij za pomocą Termux lub uruchom: bash ~/bin/termux-url-opener \"www.linkdowideo.pl\"\n"
 echo -e "UWAGA: Pobrane pliki mogą nie być widoczne w galerii.\n"
 echo -e "Jeżeli chcesz by były one widoczne - pobierz aplikację Termux:API."
-
